@@ -108,18 +108,16 @@ const PRODUCTS = [
   {
     id: 'ozel-01',
     category: 'ozel-tasarim',
-    title: 'Resepsiyon Tezgahı',
-    detail: 'Ceviz + Çelik · Kurumsal Proje',
-    // [MEDYA GÜNCELLEME]: assets/images/products/ozel-tasarim/ozel-01.jpg
-    img: 'assets/images/products/ozel-tasarim/ozel-01.jpg',
-    alt: 'Özel tasarım ceviz ve çelik ofis resepsiyon tezgahı',
-  },
+    title: 'Akustik Çıtalı Duvar & Dresuar',
+    detail: 'Doğal Ahşap Çıta Panel · Boy Aynası & Asma Giriş Konsolu',
+    img: 'assets/images/products/ozel-tasarim/akustik-duvar.jpg',
+    alt: 'Akustik çıtalı duvar ve asma dresuar konsolu',
+  },,
   {
     id: 'ozel-02',
     category: 'ozel-tasarim',
     title: 'Duvar Paneli',
     detail: 'Meşe Kaplama · Dekoratif',
-    // [MEDYA GÜNCELLEME]: assets/images/products/ozel-tasarim/ozel-02.jpg
     img: 'assets/images/products/ozel-tasarim/ozel-02.jpg',
     alt: 'Dekoratif meşe kaplama duvar paneli, geometrik desen',
   },
@@ -128,7 +126,6 @@ const PRODUCTS = [
     category: 'ozel-tasarim',
     title: 'Merdiven & Korkuluk',
     detail: 'Meşe Basamak · Siyah Mat Demir',
-    // [MEDYA GÜNCELLEME]: assets/images/products/ozel-tasarim/ozel-03.jpg
     img: 'assets/images/products/ozel-tasarim/ozel-03.jpg',
     alt: 'El yapımı meşe basamaklı iç mekan merdiveni ve siyah demir korkuluk',
   },
