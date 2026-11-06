@@ -1,0 +1,49 @@
+# Bozdekorasyon — Medya & Geçici Dosyalar
+# (Statik site olduğu için yalnızca işletim sistemi ve editor dosyaları hariç tutulur)
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# WebStorm / JetBrains
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (ileride build aracı eklenirse)
+node_modules/
+package-lock.json
+.npm
+
+# Derleme çıktıları
+dist/
+build/
+.cache/
+
+# Ortam değişkenleri (gizli bilgiler)
+.env
+.env.local
+
+# Yedek dosyalar
+*.bak
+*.backup
+*.orig
+*.tmp

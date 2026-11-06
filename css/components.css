@@ -1,0 +1,1114 @@
+/* ==========================================================================
+   COMPONENTS.CSS — Butonlar, Ürün Kartları, Filtreler, Lightbox & Hero
+   Bozdekorasyon | Latanwood Çizgisi Bileşenler
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BUTONLAR
+-------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-fast),
+    box-shadow var(--transition-base);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Birincil Buton — Dolu, koyu */
+.btn--primary {
+  background-color: var(--color-brand-dark);
+  color: var(--color-text-inverse);
+  border: 1px solid var(--color-brand-dark);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-brand-mid);
+  border-color: var(--color-brand-mid);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-md);
+}
+
+/* İkincil Buton — Sadece kenarlık */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-brand-dark);
+  border: 1px solid var(--color-brand-dark);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-brand-dark);
+  color: var(--color-text-inverse);
+}
+
+/* Işık (beyaz arka plan üzerinde) */
+.btn--light {
+  background-color: transparent;
+  color: var(--color-text-inverse);
+  border: 1px solid rgba(248, 247, 244, 0.6);
+}
+
+.btn--light:hover {
+  background-color: var(--color-text-inverse);
+  color: var(--color-brand-dark);
+  border-color: var(--color-text-inverse);
+}
+
+/* Ok ikonu içeren buton */
+.btn__arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: transform var(--transition-base);
+}
+
+.btn:hover .btn__arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO SECTION — Latanwood Stili (Sol-alt metin, tam ekran video/görsel)
+-------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  /* Üstte sabit header için boşluk bırak, tam ekrana yayılmasını engelle */
+  margin-top: var(--header-height);
+  height: calc(100svh - var(--header-height));
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: #1a1410;
+}
+
+/* Video/Görsel Arka Plan */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video,
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+  transition: transform 10s ease-out;
+}
+
+.hero.is-loaded .hero__video,
+.hero.is-loaded .hero__image {
+  transform: scale(1);
+}
+
+/*
+ * Overlay — Latanwood tarzı: alttan yukarı doğru koyu gradient
+ * Metnin okunabilirliğini sağlar, üst kısım daha açık kalır
+ */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 10, 6, 0.80) 0%,
+    rgba(14, 10, 6, 0.40) 35%,
+    rgba(14, 10, 6, 0.10) 65%,
+    rgba(14, 10, 6, 0.00) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero Özel Kapsayıcı — Latanwood gibi Header logosuyla aynı sol hizada */
+.hero__container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-x);
+}
+
+/* İçerik — Tam sol-alt köşe (latanwood layout) */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  /* Sadece içeriğin kapladığı alan */
+  max-width: 580px;
+  /* Alttan net boşluk */
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+  width: 100%;
+}
+
+/* Küçük üst etiket — "Sizin İçin En Değerlisi..." */
+.hero__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
+}
+
+.hero.is-loaded .hero__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ana başlık — Latanwood gibi sade, modern ve orantılı */
+.hero__title {
+  font-family: var(--font-sans);  /* Latanwood'daki gibi modern düz font */
+  font-size: clamp(1.8rem, 1.2rem + 2.2vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.75s ease 0.3s, transform 0.75s ease 0.3s;
+}
+
+.hero.is-loaded .hero__title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__title em {
+  font-style: normal;
+}
+
+/* Açıklama metni — HİÇ GÖSTERILMEZ */
+.hero__description {
+  display: none;
+}
+
+/* CTA Buton grubu */
+.hero__actions {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.65s ease 0.5s, transform 0.65s ease 0.5s;
+}
+
+.hero.is-loaded .hero__actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * Hero CTA — Latanwood'un beyaz dikdörtgen butonu
+ * Tam olarak görseldeki "Tüm Ürünlerimiz" butonu gibi
+ */
+.btn--hero {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.03em;
+  text-transform: none;              /* Latanwood'da büyük harf YOK */
+  padding: 0.7rem 1.6rem;
+  background-color: #ffffff;
+  color: #1a1410;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn--hero:hover {
+  background-color: rgba(255,255,255,0.88);
+  color: #1a1410;
+}
+
+.btn--hero:active {
+  transform: scale(0.98);
+}
+
+/* Scroll Göstergesi — sağ-alt köşe */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(248, 247, 244, 0.45);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeInScroll 1s ease 1.4s forwards;
+}
+
+@keyframes fadeInScroll {
+  to { opacity: 1; }
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 247, 244, 0.45),
+    rgba(248, 247, 244, 0)
+  );
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.45; }
+  50%       { transform: scaleY(1.4); opacity: 0.9; }
+}
+
+/* ============================================================
+   FLOATING CONTACT WIDGET — Sabit Sağ-Alt İletişim Butonları
+   Latanwood'un sağ-alt telefon + WhatsApp butonları
+   ============================================================ */
+
+.floating-contact {
+  position: fixed;
+  bottom: clamp(1.25rem, 3vw, 2rem);
+  right:  clamp(1.25rem, 3vw, 2rem);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+
+  /* Sayfa yüklenince yumuşakça belirir */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease 1.8s, transform 0.6s ease 1.8s;
+}
+
+.floating-contact.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Her bir yuvarlak buton */
+.floating-contact__btn {
+  width:  52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.floating-contact__btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.floating-contact__btn:active {
+  transform: scale(0.96);
+}
+
+/* Telefon butonu — Koyu gri (latanwood ile aynı) */
+.floating-contact__btn--phone {
+  background-color: #3d3d3d;
+  color: #ffffff;
+}
+
+/* WhatsApp butonu — Yeşil */
+.floating-contact__btn--whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+/* Tooltip (hover'da çıkan etiket) */
+.floating-contact__btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(14, 10, 6, 0.85);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  white-space: nowrap;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.floating-contact__btn:hover::before {
+  opacity: 1;
+}
+
+/* SVG ikonlar */
+.floating-contact__btn svg {
+  width:  22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* Mobil'de biraz daha küçült */
+@media (max-width: 480px) {
+  .floating-contact__btn {
+    width:  46px;
+    height: 46px;
+  }
+
+  .floating-contact__btn::before {
+    display: none; /* Mobilde tooltip gizle */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. HAKKIMIZDA / ZANAAT FELSEFESİ
+-------------------------------------------------------------------------- */
+
+.about {
+  background-color: var(--color-bg-primary);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: center;
+}
+
+.about__visual {
+  position: relative;
+}
+
+/* [MEDYA GÜNCELLEME]: Hakkımızda bölümü ana görseli */
+.about__image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.about__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-luxury);
+}
+
+.about__image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* Dekoratif kayan kare */
+.about__image-deco {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  border: 1.5px solid var(--color-brand-warm);
+  border-radius: var(--radius-md);
+  z-index: -1;
+}
+
+/* Atölye istatistikleri kartı */
+.about__stats {
+  position: absolute;
+  bottom: var(--space-8);
+  left: calc(-1 * var(--space-10));
+  background-color: var(--color-brand-cream);
+  border: 1px solid var(--color-brand-stone);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  gap: var(--space-8);
+}
+
+.about__stat-item {
+  text-align: center;
+}
+
+.about__stat-number {
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-light);
+  color: var(--color-brand-dark);
+  line-height: 1;
+}
+
+.about__stat-label {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-1);
+}
+
+/* Metin Tarafı */
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about__body p {
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: none;
+}
+
+/* Özellik listesi */
+.about__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.about__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background-color: var(--color-brand-offwhite);
+  border-radius: var(--radius-md);
+  border-left: 2px solid var(--color-brand-warm);
+}
+
+.about__feature-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about__feature-text h4 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-brand-dark);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-1);
+}
+
+.about__feature-text p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-tertiary);
+  max-width: none;
+}
+
+/* About Responsive */
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__visual {
+    order: -1;
+  }
+
+  .about__stats {
+    position: static;
+    margin-top: var(--space-6);
+    justify-content: center;
+  }
+
+  .about__image-deco {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. KOLEKSİYON — FİLTRE ÇUBUĞU
+-------------------------------------------------------------------------- */
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.filter-btn {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-brand-stone);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-brand-mid);
+  color: var(--color-brand-mid);
+}
+
+.filter-btn.is-active {
+  background-color: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+  color: var(--color-text-inverse);
+}
+
+/* --------------------------------------------------------------------------
+   5. ÜRÜN KARTLARI & GALERİ GRIDI
+-------------------------------------------------------------------------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Kart öğesi görünüm geçişleri (filtreleme için) */
+.product-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.product-card.is-hidden {
+  display: none;
+}
+
+.product-card.is-filtering-out {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+}
+
+/* Kart Ana Sarmalayıcı */
+.product-card__inner {
+  background-color: var(--color-brand-offwhite);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-brand-stone);
+  cursor: pointer;
+  transition: box-shadow var(--transition-luxury);
+}
+
+.product-card__inner:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Görsel Wrapper */
+.product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+/* [MEDYA GÜNCELLEME]: Ürün kartı görseli
+   Yolu: assets/images/products/<kategori>/<dosya-adi>.jpg */
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-luxury);
+}
+
+.product-card__inner:hover .product-card__img {
+  transform: scale(1.07);
+}
+
+/* Hover Overlay — "Görüntüle" etiketi */
+.product-card__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(44, 34, 30, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.product-card__inner:hover .product-card__overlay {
+  opacity: 1;
+}
+
+.product-card__view-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-text-inverse);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid rgba(248, 247, 244, 0.6);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(4px);
+}
+
+/* Kategori Etiketi */
+.product-card__category {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-text-inverse);
+  background-color: rgba(44, 34, 30, 0.6);
+  backdrop-filter: blur(8px);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+}
+
+/* Kart Alt Bilgisi */
+.product-card__body {
+  padding: var(--space-5) var(--space-6);
+  border-top: 1px solid var(--color-brand-stone);
+}
+
+.product-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-light);
+  color: var(--color-brand-dark);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: var(--space-2);
+  line-height: var(--lh-snug);
+}
+
+.product-card__detail {
+  font-size: var(--fs-sm);
+  color: var(--color-text-tertiary);
+  line-height: var(--lh-normal);
+}
+
+/* --------------------------------------------------------------------------
+   6. LIGHTBOX MODAL
+-------------------------------------------------------------------------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Arka Plan */
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 10, 8, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+/* İçerik Kutusu */
+.lightbox__content {
+  position: relative;
+  z-index: 1;
+  max-width: min(90vw, 1100px);
+  max-height: 90svh;
+  display: flex;
+  flex-direction: column;
+
+  transform: scale(0.94) translateY(12px);
+  transition: transform var(--transition-luxury);
+}
+
+.lightbox.is-open .lightbox__content {
+  transform: scale(1) translateY(0);
+}
+
+/* Lightbox Görsel */
+.lightbox__img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 72svh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Alt Bilgi */
+.lightbox__info {
+  padding: var(--space-5) var(--space-2) var(--space-2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.lightbox__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-light);
+  color: var(--color-text-inverse);
+  letter-spacing: var(--ls-tight);
+}
+
+.lightbox__detail {
+  font-size: var(--fs-sm);
+  color: rgba(248, 247, 244, 0.5);
+  margin-top: var(--space-1);
+}
+
+/* Kapatma Butonu */
+.lightbox__close {
+  position: absolute;
+  top: calc(-1 * var(--space-12));
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(248, 247, 244, 0.7);
+  font-size: 1.5rem;
+  transition: color var(--transition-base), transform var(--transition-base);
+  cursor: pointer;
+}
+
+.lightbox__close:hover {
+  color: var(--color-text-inverse);
+  transform: rotate(90deg);
+}
+
+/* Önceki / Sonraki Oklar */
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(248, 247, 244, 0.7);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color var(--transition-base), transform var(--transition-fast);
+  z-index: 2;
+}
+
+.lightbox__nav--prev {
+  left: calc(-1 * var(--space-16));
+}
+
+.lightbox__nav--next {
+  right: calc(-1 * var(--space-16));
+}
+
+.lightbox__nav:hover {
+  color: var(--color-text-inverse);
+}
+
+.lightbox__nav--prev:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.lightbox__nav--next:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .lightbox__nav--prev {
+    left: var(--space-2);
+    background: rgba(28, 20, 14, 0.5);
+    border-radius: var(--radius-full);
+  }
+
+  .lightbox__nav--next {
+    right: var(--space-2);
+    background: rgba(28, 20, 14, 0.5);
+    border-radius: var(--radius-full);
+  }
+
+  .lightbox__close {
+    top: calc(-1 * var(--space-10));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. İLETİŞİM & SOSYAL MEDYA BÖLÜMÜ
+-------------------------------------------------------------------------- */
+
+.contact {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: start;
+}
+
+/* Sol: İletişim Bilgileri */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.contact__item {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+.contact__icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(140, 115, 85, 0.15);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(140, 115, 85, 0.25);
+}
+
+.contact__item-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-brand-warm);
+  margin-bottom: var(--space-2);
+}
+
+.contact__item-value {
+  font-size: var(--fs-md);
+  color: rgba(248, 247, 244, 0.85);
+  line-height: var(--lh-snug);
+}
+
+.contact__item-value a {
+  color: rgba(248, 247, 244, 0.85);
+  transition: color var(--transition-base);
+}
+
+.contact__item-value a:hover {
+  color: var(--color-brand-warm);
+}
+
+/* WhatsApp butonu */
+.contact__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.contact__whatsapp:hover {
+  background-color: #25D366;
+  color: #fff;
+}
+
+/* Sağ: Sosyal Medya */
+.contact__social {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.contact__social-heading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-light);
+  color: var(--color-text-inverse);
+  letter-spacing: var(--ls-tight);
+}
+
+.contact__social-desc {
+  font-size: var(--fs-base);
+  color: rgba(248, 247, 244, 0.6);
+  line-height: var(--lh-relaxed);
+  max-width: 42ch;
+  margin-top: var(--space-3);
+}
+
+/* Instagram Bağlantısı */
+.instagram-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background-color: rgba(248, 247, 244, 0.05);
+  border: 1px solid rgba(248, 247, 244, 0.1);
+  border-radius: var(--radius-lg);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.instagram-card:hover {
+  background-color: rgba(248, 247, 244, 0.08);
+  border-color: rgba(140, 115, 85, 0.4);
+  color: var(--color-text-inverse);
+}
+
+.instagram-card__icon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.instagram-card__handle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-inverse);
+}
+
+.instagram-card__sub {
+  font-size: var(--fs-xs);
+  color: rgba(248, 247, 244, 0.5);
+  margin-top: var(--space-1);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.instagram-card__arrow {
+  margin-left: auto;
+  color: rgba(248, 247, 244, 0.4);
+  font-size: 1.1rem;
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.instagram-card:hover .instagram-card__arrow {
+  transform: translateX(4px);
+  color: var(--color-brand-warm);
+}
+
+/* İletişim Responsive */
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. PLACEHOLDER GÖRSELLER (Gerçek medya eklenene kadar)
+-------------------------------------------------------------------------- */
+
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-stone) 0%,
+    var(--color-brand-offwhite) 50%,
+    var(--color-brand-stone) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

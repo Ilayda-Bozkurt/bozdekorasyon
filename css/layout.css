@@ -1,0 +1,487 @@
+/* ==========================================================================
+   LAYOUT.CSS — Header, Footer & Sayfa İskeleti
+   Bozdekorasyon | Glassmorphism Header + Grid Altyapısı
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CONTAINER (Merkezi İçerik Sarmalayıcı)
+-------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-x);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* --------------------------------------------------------------------------
+   2. SECTION ORTAK STİLLER
+-------------------------------------------------------------------------- */
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+.section--alt {
+  background-color: var(--color-bg-section-alt);
+}
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+}
+
+/* Bölüm Başlık Grubu */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.section-header--left {
+  text-align: left;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-brand-mid);
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-2xl);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-brand-dark);
+  line-height: var(--lh-snug);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--color-brand-mid);
+}
+
+.section-description {
+  margin-top: var(--space-6);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.section-header--left .section-description {
+  margin-inline: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. HEADER & NAVİGASYON
+-------------------------------------------------------------------------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+
+  /* Latanwood stili: Daima beyaz, ferah ve net arka plan */
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+  transition:
+    height var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* Scroll yapıldığında yüksekliği hafif daralt */
+.site-header.is-scrolled {
+  height: var(--header-height-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Header linkleri daima koyu ve belirgin */
+.site-header .nav-link,
+.site-header .site-logo {
+  color: var(--color-brand-dark) !important;
+}
+
+.site-header .site-logo span {
+  color: var(--color-brand-mid);
+}
+
+/* Nav İç Düzeni */
+.nav-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* Logo */
+.site-logo {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  font-weight: var(--fw-light);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+  transition: color var(--transition-base), opacity var(--transition-base);
+  flex-shrink: 0;
+}
+
+.site-logo span {
+  color: var(--color-brand-mid);
+}
+
+.site-logo:hover {
+  opacity: 0.7;
+}
+
+/* Desktop Nav Linkleri */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+  position: relative;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+}
+
+/* Underline hover efekti */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width var(--transition-luxury);
+}
+
+.nav-link:hover {
+  color: var(--color-brand-mid);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA Butonu (Header'daki özel buton) */
+.nav-cta {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-sm);
+  color: var(--color-brand-mid);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.site-header.is-hero-mode .nav-cta {
+  color: rgba(248, 247, 244, 0.85);
+  border-color: rgba(248, 247, 244, 0.5);
+}
+
+.site-header.is-hero-mode.is-scrolled .nav-cta {
+  color: var(--color-brand-mid);
+  border-color: var(--color-brand-mid);
+}
+
+.nav-cta:hover {
+  background-color: var(--color-brand-mid);
+  color: var(--color-text-inverse);
+  border-color: var(--color-brand-mid);
+}
+
+/* Hamburger Menü Butonu (Mobil) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: currentColor;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    width var(--transition-base);
+  transform-origin: center;
+}
+
+.nav-toggle.is-active .nav-toggle__bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-toggle.is-active .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav-toggle.is-active .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBİL NAV DRAWER
+-------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: flex;
+    color: var(--color-brand-dark);
+  }
+
+  .site-header.is-hero-mode .nav-toggle {
+    color: var(--color-text-inverse);
+  }
+
+  .site-header.is-hero-mode.is-scrolled .nav-toggle {
+    color: var(--color-brand-dark);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(80vw, 320px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-32) var(--space-10);
+
+    background-color: var(--color-brand-cream);
+    border-left: 1px solid var(--color-brand-stone);
+    box-shadow: -8px 0 40px rgba(44, 34, 30, 0.12);
+
+    transform: translateX(100%);
+    transition: transform var(--transition-luxury);
+    overflow-y: auto;
+  }
+
+  .nav-menu.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: var(--fs-xl);
+    font-family: var(--font-serif);
+    font-weight: var(--fw-light);
+    letter-spacing: var(--ls-normal);
+    text-transform: none;
+    color: var(--color-brand-dark) !important;
+  }
+
+  .nav-cta {
+    margin-top: var(--space-4);
+  }
+
+  /* Overlay */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(28, 20, 14, 0.4);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .nav-overlay.is-active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER
+-------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: var(--color-bg-dark);
+  color: rgba(248, 247, 244, 0.7);
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: var(--space-10);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+  border-bottom: 1px solid rgba(248, 247, 244, 0.1);
+}
+
+.footer-brand .site-logo {
+  color: var(--color-text-inverse);
+  display: inline-block;
+  margin-bottom: var(--space-6);
+  font-size: 1.3rem;
+}
+
+.footer-tagline {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: rgba(248, 247, 244, 0.6);
+  max-width: 36ch;
+}
+
+.footer-heading {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-text-inverse);
+  margin-bottom: var(--space-6);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-link {
+  font-size: var(--fs-sm);
+  color: rgba(248, 247, 244, 0.6);
+  transition: color var(--transition-base);
+}
+
+.footer-link:hover {
+  color: var(--color-brand-warm);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: var(--fs-xs);
+  color: rgba(248, 247, 244, 0.4);
+  letter-spacing: var(--ls-wide);
+}
+
+.footer-made {
+  font-size: var(--fs-xs);
+  color: rgba(248, 247, 244, 0.3);
+  letter-spacing: var(--ls-wide);
+}
+
+/* Footer Responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-2);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. YARDIMCI DÜZEN SINIFLARı
+-------------------------------------------------------------------------- */
+
+/* Görsel yardımcılar */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Divider */
+.divider {
+  width: 48px;
+  height: 1px;
+  background-color: var(--color-brand-warm);
+  margin: var(--space-6) auto;
+}
+
+.divider--left {
+  margin-inline: 0;
+}
+
+/* Fade-in animasyon (IntersectionObserver ile tetiklenir) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger gecikmesi */
+.reveal--delay-1 { transition-delay: 0.1s; }
+.reveal--delay-2 { transition-delay: 0.2s; }
+.reveal--delay-3 { transition-delay: 0.3s; }
+.reveal--delay-4 { transition-delay: 0.4s; }
+.reveal--delay-5 { transition-delay: 0.5s; }

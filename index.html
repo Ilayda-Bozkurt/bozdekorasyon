@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ======================================================================
+       SEO & META BİLGİLERİ
+       [GÜNCELLEME]: Açıklama ve anahtar kelimeler işletmeye göre özelleştirin
+  ====================================================================== -->
+  <title>Bozdekorasyon — El Yapımı Ahşap Mobilya & Özel Tasarım Atölyesi</title>
+  <meta name="description"
+        content="Bozdekorasyon, el işçiliği ile üretilen özel ahşap mobilya ve dekorasyon çözümleri sunar. Masalar, mutfak dolapları ve kişiye özel tasarımlarla yaşam alanlarınıza değer katıyoruz.">
+  <meta name="keywords"
+        content="ahşap mobilya, el yapımı mobilya, özel tasarım mobilya, ceviz masa, meşe mutfak, ahşap dekorasyon, bozdekorasyon">
+  <meta name="author" content="Bozdekorasyon">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <!-- [GÜNCELLEME]: Sitenizin gerçek alan adıyla değiştirin -->
+  <link rel="canonical" href="https://bozdekorasyon.com.tr/">
+
+  <!-- ======================================================================
+       OPEN GRAPH (Sosyal Medya Paylaşım Önizlemesi)
+       [MEDYA GÜNCELLEME]: og:image için assets/images/brand/og-image.jpg ekleyin
+  ====================================================================== -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Bozdekorasyon — El Yapımı Ahşap Mobilya & Özel Tasarım">
+  <meta property="og:description" content="Doğal ahşabın mimarla buluştuğu yer. El işçiliği ile üretilen özel mobilya ve dekorasyon çözümleri.">
+  <meta property="og:url"         content="https://bozdekorasyon.com.tr/">
+  <!-- [MEDYA GÜNCELLEME]: assets/images/brand/og-image.jpg dosyasını 1200×630px boyutunda yükleyin -->
+  <meta property="og:image"       content="https://bozdekorasyon.com.tr/assets/images/brand/og-image.jpg">
+  <meta property="og:locale"      content="tr_TR">
+  <meta property="og:site_name"   content="Bozdekorasyon">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bozdekorasyon — El Yapımı Ahşap Mobilya">
+  <meta name="twitter:description" content="Doğal ahşabın mimarla buluştuğu yer. Özel tasarım mobilya ve dekorasyon atölyesi.">
+  <!-- [MEDYA GÜNCELLEME]: Twitter kart görseli (og:image ile aynı olabilir) -->
+  <meta name="twitter:image"       content="https://bozdekorasyon.com.tr/assets/images/brand/og-image.jpg">
+
+  <!-- ======================================================================
+       FAVİCON
+       [MEDYA GÜNCELLEME]: Aşağıdaki favicon dosyalarını assets/images/brand/ klasörüne ekleyin
+  ====================================================================== -->
+  <!-- [MEDYA GÜNCELLEME]: assets/images/brand/favicon.ico — 32×32px ICO -->
+  <link rel="icon" type="image/x-icon"       href="assets/images/brand/favicon.ico">
+  <!-- [MEDYA GÜNCELLEME]: assets/images/brand/apple-touch-icon.png — 180×180px PNG -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/brand/apple-touch-icon.png">
+  <!-- [MEDYA GÜNCELLEME]: assets/images/brand/favicon-32x32.png — 32×32px PNG -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/brand/favicon-32x32.png">
+
+  <!-- ======================================================================
+       GOOGLE FONTS — Lüks Tipografi
+       Cormorant Garamond (Serif başlıklar) + Plus Jakarta Sans (Sans gövde)
+       font-display: swap ile performanslı yükleme
+  ====================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ======================================================================
+       CSS — Ana Stil Dosyası (@import ile modülleri toplar)
+  ====================================================================== -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ======================================================================
+       YAPISAL VERİ (Schema.org JSON-LD) — SEO
+  ====================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Bozdekorasyon",
+    "description": "El yapımı ahşap mobilya ve dekorasyon atölyesi. Masalar, mutfak dolapları ve kişiye özel tasarımlar.",
+    "url": "https://bozdekorasyon.com.tr",
+    "telephone": "+90-5XX-XXX-XX-XX",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Atölye Adresiniz",
+      "addressLocality": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/bozdekorasyonn"
+    ],
+    "image": "https://bozdekorasyon.com.tr/assets/images/brand/og-image.jpg",
+    "priceRange": "₺₺₺"
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- ========================================================================
+       MOBİL NAV OVERLAY (Drawer dışına tıklandığında menüyü kapatır)
+  ======================================================================== -->
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       HEADER & NAVİGASYON
+       Glassmorphism efekti — scroll yapıldığında .is-scrolled sınıfı eklenir
+  ======================================================================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" role="navigation" aria-label="Ana Navigasyon">
+
+        <!-- Logo -->
+        <a href="#anasayfa" class="site-logo" aria-label="Bozdekorasyon Ana Sayfa">
+          BOZ<span>DEKORASYON</span>
+        </a>
+
+        <!-- Hamburger Menü (Mobil) -->
+        <button
+          class="nav-toggle"
+          aria-label="Menüyü aç/kapat"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+
+        <!-- Desktop Nav Menüsü -->
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li role="listitem">
+            <a href="#atolye" class="nav-link">Atölye</a>
+          </li>
+          <li role="listitem">
+            <a href="#koleksiyon" class="nav-link">Koleksiyon</a>
+          </li>
+          <li role="listitem">
+            <a href="#iletisim" class="nav-link">İletişim</a>
+          </li>
+          <li role="listitem">
+            <a href="#iletisim" class="nav-link nav-cta">Teklif Al</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+<!-- ========================================================================
+       ANA İÇERİK
+  ======================================================================== -->
+  <main id="main-content" role="main">
+
+    <!-- ======================================================================
+         1. HERO SECTION — Kapak Alanı (Latanwood Stili)
+         Tam ekran video · Alt-sol metin · Gradient overlay
+    ====================================================================== -->
+    <section class="hero" id="anasayfa" aria-label="Kapak alanı">
+
+      <!-- Arka Plan Medyası -->
+      <div class="hero__media" aria-hidden="true">
+
+        <!-- 
+          VİDEO AKTİF EDİLDİ: Arka planda atölye videosu oynayacak 
+          Not: hero-video.mp4 dosyanızı assets/images/hero/ klasörüne koyduğunuzdan emin olun.
+        -->
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/images/hero/hero-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="assets/images/hero/hero-video.mp4" type="video/mp4">
+          Tarayıcınız video etiketini desteklemiyor.
+        </video>
+
+      </div>
+
+      <!-- Gradient Overlay — Alttan yukarı doğru karartma -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- İçerik — Alt-sol köşe (latanwood layout) -->
+      <div class="hero__container">
+        <div class="hero__content">
+
+          <!-- Küçük üst etiket (latanwood: "Sizin İçin En Değerlisi...") -->
+          <span class="hero__label">Sizin İçin En Tasarlıyoruz...</span>
+
+          <!-- Ana başlık -->
+          <h1 class="hero__title">
+            Boz Dekorasyon | Ahşap ve Mobilya Atölyesi
+          </h1>
+
+          <!-- Tek CTA butonu -->
+          <div class="hero__actions">
+            <a href="#koleksiyon" class="btn--hero">
+              Tüm Ürünlerimiz
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll çizgisi — sağ-alt -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         2. HAKKIMIZDA / ZANAAT FELSEFESİ
+    ====================================================================== -->
+    <section class="about section" id="atolye" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- Sol: Görsel -->
+          <div class="about__visual reveal">
+
+            <div class="about__image-wrapper">
+              <!--
+                [MEDYA GÜNCELLEME]: Hakkımızda Bölümü Ana Görseli
+                Atölye veya el işçiliği detay fotoğrafı ekleyin.
+                Dosya yolu: assets/images/about/atolye-ana.jpg
+                Önerilen boyut: 800×1000px (4:5 oranı)
+              -->
+              <img
+                src="assets/images/about/atolye-ana.jpg"
+                alt="Bozdekorasyon atölyesi — ustanın el işçiliği ile masanın son rötuşları"
+                loading="lazy"
+                onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>Atölye Görseli</div>'"
+              >
+            </div>
+
+            <!-- Dekoratif köşe çerçevesi -->
+            <div class="about__image-deco" aria-hidden="true"></div>
+
+            <!-- İstatistik Kartı -->
+            <div class="about__stats" aria-label="Atölye istatistikleri">
+              <div class="about__stat-item">
+                <div class="about__stat-number">12+</div>
+                <div class="about__stat-label">Yıllık Deneyim</div>
+              </div>
+              <div class="about__stat-item">
+                <div class="about__stat-number">340+</div>
+                <div class="about__stat-label">Tamamlanan Proje</div>
+              </div>
+              <div class="about__stat-item">
+                <div class="about__stat-number">%100</div>
+                <div class="about__stat-label">El İşçiliği</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sağ: Metin -->
+          <div class="about__content">
+
+            <div class="section-header section-header--left reveal">
+              <span class="section-label">Atölyemiz</span>
+              <h2 class="section-title" id="about-title">
+                Zanaat, Sabır ve<br><em>Doğallığın</em> Birleşimi
+              </h2>
+              <div class="divider divider--left" aria-hidden="true"></div>
+            </div>
+
+            <div class="about__body reveal reveal--delay-1">
+              <p>
+                Bozdekorasyon olarak her parçayı, bir sanat eseri titizliğiyle ele alıyoruz.
+                Yıllar içinde edindiğimiz el işçiliği ustalığını, çağdaş tasarım anlayışıyla
+                harmanlayarak; evinize ya da çalışma alanınıza tam anlamıyla özel mobilyalar
+                üretiyoruz.
+              </p>
+              <p>
+                Kullandığımız her malzeme özenle seçilir. Amerikan cevizi, Avrupa meşesi
+                ve nadir bulunan masif ağaçlardan dönüştürülen parçalarımız, yalnızca
+                sizin için biçimlendirilir. Seri üretim yoktur; her iş, yeni bir başlangıçtır.
+              </p>
+            </div>
+
+            <!-- Özellikler -->
+            <div class="about__features reveal reveal--delay-2">
+
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">🌳</div>
+                <div class="about__feature-text">
+                  <h4>Seçkin Malzeme</h4>
+                  <p>Yalnızca FSC sertifikalı, doğal kurutulmuş masif ahşap kullanıyoruz.</p>
+                </div>
+              </div>
+
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">✦</div>
+                <div class="about__feature-text">
+                  <h4>Kişiye Özel Üretim</h4>
+                  <p>Her ürün, müşterinin ölçü ve isteklerine göre sıfırdan tasarlanır.</p>
+                </div>
+              </div>
+
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">🛡</div>
+                <div class="about__feature-text">
+                  <h4>Ömür Boyu Dayanıklılık</h4>
+                  <p>Geleneksel birleştirme teknikleri ve modern yüzey işlemi ile nesillere kalır.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="reveal reveal--delay-3">
+              <a href="#koleksiyon" class="btn btn--primary">
+                Koleksiyonu İncele
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. KOLEKSİYON — Filtrelemeli Ürün Galerisi
+    ====================================================================== -->
+    <section class="section section--alt" id="koleksiyon" aria-labelledby="gallery-title">
+      <div class="container">
+
+        <!-- Bölüm Başlığı -->
+        <div class="section-header reveal">
+          <span class="section-label">Koleksiyon</span>
+          <h2 class="section-title" id="gallery-title">
+            El Yapımı <em>Eserler</em>
+          </h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-description">
+            Her biri tek, her biri özel. Atölyemizden çıkan seçkin parçaları keşfedin.
+          </p>
+        </div>
+
+        <!-- Filtre Çubuğu -->
+        <div class="filter-bar reveal reveal--delay-1" role="group" aria-label="Koleksiyon filtreleri">
+          <button class="filter-btn is-active" data-filter="all"           aria-pressed="true">Tümü</button>
+          <button class="filter-btn"           data-filter="masalar"       aria-pressed="false">Masalar</button>
+          <button class="filter-btn"           data-filter="mutfak"        aria-pressed="false">Mutfak &amp; Dolap</button>
+          <button class="filter-btn"           data-filter="ozel-tasarim" aria-pressed="false">Özel Tasarım</button>
+        </div>
+
+        <!--
+          Ürün Kartları Grid'i
+          Kartlar JavaScript (gallery.js) tarafından PRODUCTS dizisinden dinamik olarak oluşturulur.
+          Yeni ürün eklemek için: js/gallery.js dosyasındaki PRODUCTS dizisini düzenleyin.
+        -->
+        <div
+          class="gallery-grid"
+          id="gallery-grid"
+          role="list"
+          aria-label="Ürün galerisi"
+          aria-live="polite"
+        >
+          <!-- Kartlar gallery.js tarafından buraya render edilir -->
+          <noscript>
+            <p style="text-align:center; color: #9c9088; padding: 2rem;">
+              Ürün galerisini görüntülemek için JavaScript'i etkinleştirin.
+            </p>
+          </noscript>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. İLETİŞİM, KONUM & SOSYAL MEDYA
+    ====================================================================== -->
+    <section class="contact section section--dark" id="iletisim" aria-labelledby="contact-title">
+      <div class="container">
+
+        <!-- Bölüm Başlığı -->
+        <div class="section-header reveal" style="margin-bottom: clamp(3rem, 5vw, 5rem);">
+          <span class="section-label" style="color: var(--color-brand-warm);">İletişim</span>
+          <h2 class="section-title" id="contact-title" style="color: var(--color-text-inverse);">
+            Hayalinizdeki Parçayı<br><em>Birlikte Tasarlayalım</em>
+          </h2>
+          <div class="divider" aria-hidden="true" style="background-color: var(--color-brand-mid);"></div>
+        </div>
+
+        <div class="contact__grid">
+
+          <!-- Sol: İletişim Bilgileri -->
+          <div class="contact__info reveal">
+
+            <!-- Telefon -->
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">📞</div>
+              <div>
+                <div class="contact__item-label">Telefon</div>
+                <div class="contact__item-value">
+                  <!--
+                    [GÜNCELLEME]: Telefon numarasını aşağıda güncelleyin
+                    href="tel:+905XXXXXXXXX" formatını kullanın
+                  -->
+                  <a href="tel:+905001234567">+90 500 123 45 67</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">💬</div>
+              <div>
+                <div class="contact__item-label">WhatsApp Hattı</div>
+                <div class="contact__item-value">
+                  Proje detaylarınızı paylaşın, size özel fiyat teklifi alalım.
+                </div>
+                <!--
+                  [GÜNCELLEME]: WhatsApp numarasını aşağıda güncelleyin
+                  href="https://wa.me/905XXXXXXXXX?text=Merhaba..." formatını kullanın
+                -->
+                <a
+                  href="https://wa.me/905001234567?text=Merhaba%2C%20mobilya%20teklifi%20almak%20istiyorum."
+                  class="contact__whatsapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp üzerinden iletişime geç"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  WhatsApp'tan Yaz
+                </a>
+              </div>
+            </div>
+
+            <!-- E-posta -->
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">✉️</div>
+              <div>
+                <div class="contact__item-label">E-posta</div>
+                <div class="contact__item-value">
+                  <!-- [GÜNCELLEME]: E-posta adresini güncelleyin -->
+                  <a href="mailto:info@bozdekorasyon.com.tr">info@bozdekorasyon.com.tr</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Adres -->
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="contact__item-label">Atölye Adresi</div>
+                <div class="contact__item-value">
+                  <!--
+                    [GÜNCELLEME]: Adres bilgilerini güncelleyin
+                    Google Maps bağlantısını href'e ekleyin
+                  -->
+                  <a
+                    href="https://maps.google.com/?q=Bozdekorasyon+Atölye+İstanbul"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Atölye Sokak No: XX<br>
+                    İlçe / İstanbul
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Çalışma Saatleri -->
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">🕐</div>
+              <div>
+                <div class="contact__item-label">Çalışma Saatleri</div>
+                <div class="contact__item-value">
+                  Pzt – Cmt: 09:00 – 18:00<br>
+                  Pazar: Randevuyla
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sağ: Sosyal Medya -->
+          <div class="contact__social reveal reveal--delay-2">
+
+            <div>
+              <h3 class="contact__social-heading">
+                Bizi Takip Edin,<br><em>İlham Alın</em>
+              </h3>
+              <p class="contact__social-desc">
+                Üretim sürecimizden kareler, yeni projeler ve atölye günlükleri için
+                Instagram sayfamızı takip edin.
+              </p>
+            </div>
+
+            <!-- Instagram Bağlantısı -->
+            <!--
+              [GÜNCELLEME]: Instagram kullanıcı adını güncelleyin
+              href="https://instagram.com/KULLANICI_ADI" şeklinde düzenleyin
+            -->
+            <a
+              href="https://www.instagram.com/bozdekorasyonn"
+              class="instagram-card"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Bozdekorasyon Instagram sayfasına git"
+            >
+              <div class="instagram-card__icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="instagram-card__handle">@bozdekorasyonn</div>
+                <div class="instagram-card__sub">Instagram'da Takip Et</div>
+              </div>
+              <div class="instagram-card__arrow" aria-hidden="true">→</div>
+            </a>
+
+            <!--
+              [MEDYA GÜNCELLEME]: Instagram Önizleme Görselleri (Opsiyonel)
+              Atölyenizin Instagram feed'inden 3 kare ekleyebilirsiniz.
+              Dosya yolları: assets/images/about/insta-preview-1.jpg vb.
+            -->
+            <div style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 0.5rem;
+              margin-top: 0.5rem;
+              border-radius: var(--radius-md);
+              overflow: hidden;
+            " aria-label="Instagram önizleme galerisi">
+              <!-- [MEDYA GÜNCELLEME]: assets/images/about/insta-1.jpg -->
+              <img
+                src="assets/images/about/insta-1.jpg"
+                alt="Instagram paylaşımı 1"
+                loading="lazy"
+                style="aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm);"
+                onerror="this.style.background='rgba(140,115,85,0.15)'; this.style.minHeight='80px';"
+              >
+              <!-- [MEDYA GÜNCELLEME]: assets/images/about/insta-2.jpg -->
+              <img
+                src="assets/images/about/insta-2.jpg"
+                alt="Instagram paylaşımı 2"
+                loading="lazy"
+                style="aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm);"
+                onerror="this.style.background='rgba(140,115,85,0.1)'; this.style.minHeight='80px';"
+              >
+              <!-- [MEDYA GÜNCELLEME]: assets/images/about/insta-3.jpg -->
+              <img
+                src="assets/images/about/insta-3.jpg"
+                alt="Instagram paylaşımı 3"
+                loading="lazy"
+                style="aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm);"
+                onerror="this.style.background='rgba(140,115,85,0.08)'; this.style.minHeight='80px';"
+              >
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+  ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Marka Kolonu -->
+        <div class="footer-brand">
+          <a href="#anasayfa" class="site-logo" aria-label="Bozdekorasyon Ana Sayfa">
+            BOZ<span style="color: var(--color-brand-warm);">DEKORASYON</span>
+          </a>
+          <p class="footer-tagline">
+            El işçiliğiyle şekillenen her parça, doğanın bir armağanını yaşam alanınıza taşır.
+            Kalıcılık, estetik ve özgünlük—hepsi tek bir atölyeden.
+          </p>
+        </div>
+
+        <!-- Navigasyon -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Keşfet</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="#atolye"       class="footer-link">Atölyemiz</a></li>
+            <li><a href="#koleksiyon"   class="footer-link">Koleksiyon</a></li>
+            <li><a href="#iletisim"     class="footer-link">İletişim</a></li>
+            <li>
+              <!-- [MEDYA GÜNCELLEME]: PDF katalog eklemek için: assets/docs/katalog.pdf -->
+              <a href="assets/docs/katalog.pdf" class="footer-link" download aria-label="Ürün kataloğunu indir">
+                Katalog İndir
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- İletişim -->
+        <div class="footer-col">
+          <h4 class="footer-heading">İletişim</h4>
+          <ul class="footer-links" role="list">
+            <li>
+              <!-- [GÜNCELLEME]: Telefon numarası -->
+              <a href="tel:+905001234567" class="footer-link">+90 500 123 45 67</a>
+            </li>
+            <li>
+              <!-- [GÜNCELLEME]: E-posta adresi -->
+              <a href="mailto:info@bozdekorasyon.com.tr" class="footer-link">info@bozdekorasyon.com.tr</a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/bozdekorasyonn"
+                class="footer-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @bozdekorasyonn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/905001234567"
+                class="footer-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp hattı"
+              >
+                WhatsApp Hattı
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Alt Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span id="footer-year">2024</span> Bozdekorasyon. Tüm hakları saklıdır.
+        </p>
+        <p class="footer-made">
+          El ile yapıldı &mdash; Kütahya, Türkiye
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       LİGHTBOX MODAL — Tam Ekran Görsel Önizleme
+       gallery.js tarafından kontrol edilir
+  ======================================================================== -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Ürün fotoğrafı önizleme"
+    aria-hidden="true"
+  >
+    <div class="lightbox__backdrop" aria-hidden="true"></div>
+
+    <!-- Önceki Görsel -->
+    <button
+      class="lightbox__nav lightbox__nav--prev"
+      aria-label="Önceki görsel"
+    >&#8592;</button>
+
+    <div class="lightbox__content">
+
+      <!-- Kapatma Butonu -->
+      <button class="lightbox__close" aria-label="Önizlemeyi kapat">&#10005;</button>
+
+      <!--
+        [NOT]: Lightbox içindeki görsel, gallery.js tarafından
+        PRODUCTS dizisinden otomatik olarak doldurulur.
+        Bu etiketi manuel düzenlemeniz gerekmez.
+      -->
+      <img
+        class="lightbox__img"
+        src=""
+        alt=""
+        draggable="false"
+      >
+
+      <div class="lightbox__info">
+        <div>
+          <h3 class="lightbox__title"></h3>
+          <p class="lightbox__detail"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sonraki Görsel -->
+    <button
+      class="lightbox__nav lightbox__nav--next"
+      aria-label="Sonraki görsel"
+    >&#8594;</button>
+
+  </div>
+
+  <!-- ========================================================================
+       FLOATING CONTACT WIDGET — Sabit Sağ-Alt İletişim Butonları
+       Latanwood tarzı: Telefon (koyu) + WhatsApp (yeşil) yuvarlak butonlar
+       [GÜNCELLEME]: href içindeki numaraları kendi numaranızla değiştirin
+  ======================================================================== -->
+  <div class="floating-contact" id="floating-contact" role="complementary" aria-label="Hızlı iletişim">
+
+    <!-- Telefon Butonu -->
+    <!-- [GÜNCELLEME]: href="tel:+905XXXXXXXXX" formatında kendi numaranı yaz -->
+    <a
+      href="tel:+905001234567"
+      class="floating-contact__btn floating-contact__btn--phone"
+      data-tooltip="Hemen Ara"
+      aria-label="Bozdekorasyon'u ara"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+
+    <!-- WhatsApp Butonu -->
+    <!-- [GÜNCELLEME]: href içindeki numarayı ve mesaj metnini güncelleyin -->
+    <a
+      href="https://wa.me/905001234567?text=Merhaba%2C%20mobilya%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+      class="floating-contact__btn floating-contact__btn--whatsapp"
+      data-tooltip="WhatsApp'tan Yaz"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp üzerinden mesaj gönder"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT
+       main.js: Global olaylar (header, mobil menü, scroll animasyonları)
+       gallery.js: Ürün render, filtreleme ve lightbox mantığı
+  ======================================================================== -->
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+
+  <!-- Telif yılını otomatik güncelle & floating widget'ı aktive et -->
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Floating contact widget — kısa gecikmeden sonra görünür yap
+    window.addEventListener('load', function () {
+      var widget = document.getElementById('floating-contact');
+      if (widget) {
+        setTimeout(function () { widget.classList.add('is-visible'); }, 800);
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* ==========================================================================
+   STYLE.CSS — Ana CSS Giriş Dosyası
+   Bozdekorasyon | Tüm modülleri tek noktadan içe aktarır
+   ========================================================================== */
+
+/*
+ * İÇE AKTARMA SIRASI ÖNEMLİDİR:
+ * 1. variables.css  — Design token'lar (Custom Properties) önce tanımlanmalı
+ * 2. reset.css      — Normalize / sıfırlama her şeyden önce uygulanmalı
+ * 3. layout.css     — Header, footer ve grid iskelet yapıları
+ * 4. components.css — Bileşen stilleri (butonlar, kartlar, lightbox vb.)
+ *
+ * NOT: Google Fonts import'u HTML <head> içinde doğrudan yapılmaktadır.
+ * Performans için CSS @import yerine HTML <link> tercih edilir.
+ */
+
+@import url('./variables.css');
+@import url('./reset.css');
+@import url('./layout.css');
+@import url('./components.css');
