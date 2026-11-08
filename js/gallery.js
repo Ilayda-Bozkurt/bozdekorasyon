@@ -68,26 +68,29 @@ const PRODUCTS = [
     alt: 'Füme cam kapaklı vitrinli ve LED aydınlatmalı özel tasarım lüks kahve köşesi ünitesi',
   },
 
-  /* ——— MUTFAK & DOLAP —————————————————————————————————————————————————— */
+  /* ——— VESTİYER & GARDIROP ————————————————————————————————————————————— */
 
   {
-    id: 'mutfak-01',
-    category: 'mutfak',
-    title: 'Özel Tasarım Vestiyer & Açık Köşe Raf',
+    id: 'vestiyer-01',
+    category: 'vestiyer-gardrop',
+    title: 'Özel Tasarım Vestiyer & Portmanto',
     detail: 'Lake Beyaz Kapaklar · Ahşap Kulp Detayları & Açık Ahşap Teşhir Rafları',
     img: 'assets/images/products/mutfak/vestiyer-portmanto.jpg',
     alt: 'Özel üretim lake antre vestiyer dolabı ve ahşap köşe teşhir raf ünitesi',
   },
   {
-    id: 'mutfak-02',
-    category: 'mutfak',
+    id: 'gardrop-01',
+    category: 'vestiyer-gardrop',
     title: 'Özel Giyinme Odası Dolap Sistemi',
     detail: 'Mat Beyaz Gövde · Çekmeceli Modül · Askılık ve Açık Raf Düzeni',
     img: 'assets/images/products/mutfak/giyinme-odasi-dolabi.jpg',
     alt: 'Geniş depolama alanlı, çekmeceli ve raflı özel tasarım giyinme odası gardırop sistemi',
   },
+
+  /* ——— MUTFAK DOLABI —————————————————————————————————————————————————— */
+
   {
-    id: 'mutfak-03',
+    id: 'mutfak-01',
     category: 'mutfak',
     title: 'Country Mutfak Dolabı',
     detail: 'İki Renkli Tasarım (Lacivert & Beyaz Lake) · Çıtalı Kapaklar & Pirinç Kulplar',
@@ -95,24 +98,6 @@ const PRODUCTS = [
     alt: 'Lacivert alt ve beyaz üst dolaplı, çıtalı kapaklı lüks country mutfak dolabı montajı',
   },
 
-  /* ——— MASALAR ——————————————————————————————————————————————————————————— */
-
-  {
-    id: 'masa-01',
-    category: 'masalar',
-    title: 'Ceviz Yemek Masası',
-    detail: 'Amerikan Masif Ceviz · Doğal Ağaç Kenarı & Çelik Gövde',
-    img: 'assets/images/products/ozel-tasarim/akustik-duvar.jpg',
-    alt: 'El yapımı masif ceviz yemek masası',
-  },
-  {
-    id: 'masa-02',
-    category: 'masalar',
-    title: 'Meşe Çalışma Masası',
-    detail: 'Beyaz Meşe · 180 × 80 cm · Siyah Mat Çelik Ayak',
-    img: 'assets/images/products/ozel-tasarim/ahsap-tv-unitesi.jpg',
-    alt: 'Beyaz meşe çalışma masası, mat çelik ayaklar',
-  },
 ];
 
 /* ==========================================================================
@@ -173,9 +158,9 @@ class GalleryFilter {
     article.dataset.id = product.id;
 
     const categoryLabels = {
-      'masalar':       'Masalar',
-      'mutfak':        'Mutfak & Dolap',
-      'ozel-tasarim':  'Özel Tasarım',
+      'mutfak':            'Mutfak Dolabı',
+      'vestiyer-gardrop':  'Vestiyer & Gardırop',
+      'ozel-tasarim':      'Özel Tasarım',
     };
 
     /*
