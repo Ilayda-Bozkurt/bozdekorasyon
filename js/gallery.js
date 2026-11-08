@@ -33,77 +33,7 @@
 
 const PRODUCTS = [
 
-  /* ——— MASALAR ——————————————————————————————————————————————————————————— */
-
-  {
-    id: 'masa-01',
-    category: 'ozel-tasarim',
-    title: 'Akustik Çıtalı Duvar & Dresuar',
-    detail: 'Doğal Ahşap Çıta Panel · Boy Aynası & Asma Giriş Konsolu',
-    // [MEDYA GÜNCELLEME]: Görsel yolunu aşağıdaki şekilde güncelleyin:
-    // assets/images/products/masalar/masa-01.jpg
-    img: 'assets/images/products/masalar/masa-01.jpg',
-    alt: 'Doğal ahşap çıtalı duvar paneli, entegre boy aynası ve asma dresuar konsolu',
-  },
-  {
-    id: 'masa-02',
-    category: 'masalar',
-    title: 'Meşe Çalışma Masası',
-    detail: 'Beyaz Meşe · 180 × 80 cm · Çelik Ayak',
-    // [MEDYA GÜNCELLEME]: assets/images/products/masalar/masa-02.jpg
-    img: 'assets/images/products/masalar/masa-02.jpg',
-    alt: 'Beyaz meşe çalışma masası, siyah mat çelik ayaklar',
-  },
-  {
-    id: 'masa-03',
-    category: 'masalar',
-    title: 'Kütük Sehpa',
-    detail: 'Doğal Kütük · Epoksi Detay',
-    // [MEDYA GÜNCELLEME]: assets/images/products/masalar/masa-03.jpg
-    img: 'assets/images/products/masalar/masa-03.jpg',
-    alt: 'Doğal kütük sehpa, epoksi dolgulu damar detayı',
-  },
-  {
-    id: 'masa-04',
-    category: 'masalar',
-    title: 'Uzayan Yemek Masası',
-    detail: 'Meşe · 160–240 × 90 cm · Uzatma Mekanizmalı',
-    // [MEDYA GÜNCELLEME]: assets/images/products/masalar/masa-04.jpg
-    img: 'assets/images/products/masalar/masa-04.jpg',
-    alt: 'Uzayan meşe yemek masası, tasarım mekanizması detayı',
-  },
-
-  /* ——— MUTFAK & DOLAP —————————————————————————————————————————————————— */
-
-  {
-    id: 'mutfak-01',
-    category: 'mutfak',
-    title: 'Masif Meşe Mutfak',
-    detail: 'Beyaz Meşe · Fırın Boyalı Mat Yüzey',
-    // [MEDYA GÜNCELLEME]: assets/images/products/mutfak/mutfak-01.jpg
-    img: 'assets/images/products/mutfak/mutfak-01.jpg',
-    alt: 'Masif beyaz meşe mutfak dolabı, mat yüzey işlemi',
-  },
-  {
-    id: 'mutfak-02',
-    category: 'mutfak',
-    title: 'Gardırop & Vestiyer',
-    detail: 'Ceviz Kaplama · Alüminyum Kasalar',
-    // [MEDYA GÜNCELLEME]: assets/images/products/mutfak/mutfak-02.jpg
-    img: 'assets/images/products/mutfak/mutfak-02.jpg',
-    alt: 'Ceviz kaplama gardırop, alüminyum gövde detayı',
-  },
-  {
-    id: 'mutfak-03',
-    category: 'mutfak',
-    title: 'Kitaplık & Depolama',
-    detail: 'Meşe · Modüler Sistem',
-    // [MEDYA GÜNCELLEME]: assets/images/products/mutfak/mutfak-03.jpg
-    img: 'assets/images/products/mutfak/mutfak-03.jpg',
-    alt: 'Modüler meşe kitaplık sistemi, açık raflar',
-  },
-
-  /* ——— ÖZEL TASARIM ————————————————————————————————————————————————————— */
+  /* ——— ÖZEL TASARIM & MİMARİ ——————————————————————————————————————————— */
 
   {
     id: 'ozel-01',
@@ -111,23 +41,77 @@ const PRODUCTS = [
     title: 'Akustik Çıtalı Duvar & Dresuar',
     detail: 'Doğal Ahşap Çıta Panel · Boy Aynası & Asma Giriş Konsolu',
     img: 'assets/images/products/ozel-tasarim/akustik-duvar.jpg',
-    alt: 'Akustik çıtalı duvar ve asma dresuar konsolu',
-  },,
+    alt: 'Doğal ahşap çıtalı duvar paneli, entegre boy aynası ve asma dresuar konsolu',
+  },
   {
     id: 'ozel-02',
     category: 'ozel-tasarim',
-    title: 'Duvar Paneli',
-    detail: 'Meşe Kaplama · Dekoratif',
-    img: 'assets/images/products/ozel-tasarim/ozel-02.jpg',
-    alt: 'Dekoratif meşe kaplama duvar paneli, geometrik desen',
+    title: 'Ahşap Duvar Panelli TV Ünitesi',
+    detail: 'Doğal Ahşap Kaplama Panel · LED Aydınlatmalı Niş Vitrin & Oluklu Lake Alt Dolap',
+    img: 'assets/images/products/ozel-tasarim/ahsap-tv-unitesi.jpg',
+    alt: 'Ahşap duvar paneli ve LED aydınlatmalı vitrin raflı özel tasarım modern TV ünitesi',
   },
   {
     id: 'ozel-03',
     category: 'ozel-tasarim',
-    title: 'Merdiven & Korkuluk',
-    detail: 'Meşe Basamak · Siyah Mat Demir',
-    img: 'assets/images/products/ozel-tasarim/ozel-03.jpg',
-    alt: 'El yapımı meşe basamaklı iç mekan merdiveni ve siyah demir korkuluk',
+    title: 'Ahşap Çıtalı Ayna & Asma Konsol',
+    detail: 'Masif Ahşap Çıta Kaplama Duvar · Entegre Dikdörtgen Ayna & Masif Konsol Rafı',
+    img: 'assets/images/products/ozel-tasarim/citali-ayna-konsol.jpg',
+    alt: 'Ahşap dikey çıta kaplama duvar üzerine asma konsol rafı ve ayna tasarımı',
+  },
+  {
+    id: 'ozel-04',
+    category: 'ozel-tasarim',
+    title: 'Kahve Köşesi & Vitrinli Bölme Dolabı',
+    detail: 'Füme Camlı & LED Aydınlatmalı Vitrin · Masif Ahşap Tezgah Arkası & Lake Alt Konsol',
+    img: 'assets/images/products/ozel-tasarim/kahve-kosesi-vitrin.jpg',
+    alt: 'Füme cam kapaklı vitrinli ve LED aydınlatmalı özel tasarım lüks kahve köşesi ünitesi',
+  },
+
+  /* ——— MUTFAK & DOLAP —————————————————————————————————————————————————— */
+
+  {
+    id: 'mutfak-01',
+    category: 'mutfak',
+    title: 'Özel Tasarım Vestiyer & Açık Köşe Raf',
+    detail: 'Lake Beyaz Kapaklar · Ahşap Kulp Detayları & Açık Ahşap Teşhir Rafları',
+    img: 'assets/images/products/mutfak/vestiyer-portmanto.jpg',
+    alt: 'Özel üretim lake antre vestiyer dolabı ve ahşap köşe teşhir raf ünitesi',
+  },
+  {
+    id: 'mutfak-02',
+    category: 'mutfak',
+    title: 'Özel Giyinme Odası Dolap Sistemi',
+    detail: 'Mat Beyaz Gövde · Çekmeceli Modül · Askılık ve Açık Raf Düzeni',
+    img: 'assets/images/products/mutfak/giyinme-odasi-dolabi.jpg',
+    alt: 'Geniş depolama alanlı, çekmeceli ve raflı özel tasarım giyinme odası gardırop sistemi',
+  },
+  {
+    id: 'mutfak-03',
+    category: 'mutfak',
+    title: 'Country Mutfak Dolabı',
+    detail: 'İki Renkli Tasarım (Lacivert & Beyaz Lake) · Çıtalı Kapaklar & Pirinç Kulplar',
+    img: 'assets/images/products/mutfak/country-mutfak-dolabi.jpg',
+    alt: 'Lacivert alt ve beyaz üst dolaplı, çıtalı kapaklı lüks country mutfak dolabı montajı',
+  },
+
+  /* ——— MASALAR ——————————————————————————————————————————————————————————— */
+
+  {
+    id: 'masa-01',
+    category: 'masalar',
+    title: 'Ceviz Yemek Masası',
+    detail: 'Amerikan Masif Ceviz · Doğal Ağaç Kenarı & Çelik Gövde',
+    img: 'assets/images/products/ozel-tasarim/akustik-duvar.jpg',
+    alt: 'El yapımı masif ceviz yemek masası',
+  },
+  {
+    id: 'masa-02',
+    category: 'masalar',
+    title: 'Meşe Çalışma Masası',
+    detail: 'Beyaz Meşe · 180 × 80 cm · Siyah Mat Çelik Ayak',
+    img: 'assets/images/products/ozel-tasarim/ahsap-tv-unitesi.jpg',
+    alt: 'Beyaz meşe çalışma masası, mat çelik ayaklar',
   },
 ];
 
